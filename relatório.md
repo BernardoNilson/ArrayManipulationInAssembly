@@ -80,22 +80,41 @@ for (int i = max; i > 0; i--) {
 
 ### Tabela relacionando variáveis e registradores:
 
-| Variável do Pseudocódigo | Registrador do MIPS |
-| -- | -- |
-| A | $t1 |
+| Variável do Pseudocódigo | Registrador do MIPS | Observação |
+| -- | -- | -- |
+| A | $s1 | Endereço do início do vetor |
+| B | $s2 | Endereço do início do vetor |
+| C | $s3 | Endereço do início do vetor |
+| D | $s4 | Endereço do início do vetor |
+| n | $s0 | Conteúdo de n |
+| sum | $t9 | Conteúdo de sum |
+| max | $t8 | Conteúdo de max |
+| SM | $s7 | Conteúdo de SM |
 
 ### Área de dados, com a solução esperada:
 
-:Imagem da área de dados do MIPS
+![data_area](data_area.png)
 
-Inicialmente, realizamos a soma e subtração de vetonres para gerar os vetores C e D:
-C = {111, -384, 137, -149, 200, 543, 504}
-D = { 61, -264, -25, 29, 0, -369, 256}
+Inicialmente, realizamos a soma e subtração de vetores A e B para gerar os vetores C e D:
 
-Após a execução da especificação geral, deve-se realizar a especificação do grupo (neste exemplo, a especificação 1):
+C = { 1, -6, 6, 2, 16, 0, 12. 13 }
 
-PE = 111*61+ (-384)*(-264) + 137*(-25) + (-149)*29 + 200*0 + 543*(-369) + 504*256 = 29058
+D = { 3, -2, 0, -18, -8, 10, 0, 3}
+
+Após a execução da especificação geral, deve-se realizar a especificação do grupo (neste exemplo, a especificação 3):
+
+SM = 16. ((1 + (−6) + 6 + 2 + 16 + 0 + 12 + 13) + (3 + (−2) + 0 + (-18) + (-8) + 10 + 0 + 3) = 16(32) = 512
 
 ### Telas do simulador MARS, com explicação;
 
-:Imagem editada com cores
+Legenda:
+
+![label](label.png)
+
+a) Ilustrar a área de dados antes de iniciar a execução
+
+![mem_antes](mem_antes.png)
+
+b) Ilustrar a área de dados ao final da execução
+
+![mem_depois](mem_depois.png)
